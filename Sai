@@ -1,0 +1,32 @@
+
+# Install vpython before running:
+# pip install vpython
+
+from vpython import *
+
+# Create the ground
+ground = box(pos=vector(0,-0.5,0), size=vector(20,1,20), color=color.green)
+
+# House Base
+base = box(pos=vector(0,1,0), size=vector(6,2,6), color=color.orange)
+
+# Roof (pyramid style)
+roof = pyramid(pos=vector(0,3,0), size=vector(7,3,7), color=color.red, axis=vector(0,1,0))
+
+# Door
+door = box(pos=vector(0,0.5,3.01), size=vector(1.5,1,0.2), color=color.brown)
+
+# Windows
+window1 = box(pos=vector(-2,1.5,3.01), size=vector(1,1,0.1), color=color.cyan)
+window2 = box(pos=vector(2,1.5,3.01), size=vector(1,1,0.1), color=color.cyan)
+
+# Tree beside the house
+tree_trunk = cylinder(pos=vector(5,0,0), axis=vector(0,3,0), radius=0.3, color=color.brown)
+tree_leaves = sphere(pos=vector(5,4,0), radius=1.5, color=color.green)
+
+# Camera control instructions
+scene.caption = "Drag with right mouse button or Ctrl-drag to rotate. Scroll to zoom."
+
+while True:
+    rate(30)
+
